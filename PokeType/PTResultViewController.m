@@ -45,6 +45,28 @@
     return nil;
 }
 
+- (NSString*)labelStringWithSectionId:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return @"4倍";
+            break;
+        case 1:
+            return @"2倍";
+            break;
+        case 2:
+            return @"1/2";
+            break;
+        case 3:
+            return @"1/4";
+            break;
+        case 4:
+            return @"こうかがない";
+            break;
+    }
+    return nil;
+}
+
 
 #pragma mark - UITableViewDataSource
 
@@ -60,32 +82,8 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    switch (section) {
-        case 0:
-            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
-                return @"4倍";
-            }
-            break;
-        case 1:
-            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
-                return @"2倍";
-            }
-            break;
-        case 2:
-            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
-                return @"1/2";
-            }
-            break;
-        case 3:
-            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
-                return @"1/4";
-            }
-            break;
-        case 4:
-            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
-                return @"こうかがない";
-            }
-            break;
+    if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
+        return [self labelStringWithSectionId:section];
     }
     
     return nil;
