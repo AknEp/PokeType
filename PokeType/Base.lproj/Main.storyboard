@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller - タイプを選んでください-->
+        <!--View Controller - ポケモンのタイプ-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="PTViewController" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                             <constraint firstAttribute="trailing" secondItem="sNv-3k-GU7" secondAttribute="trailing" id="zZc-Im-BAy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="タイプを選んでください" id="YGL-xp-UCY">
+                    <navigationItem key="navigationItem" title="ポケモンのタイプ" id="YGL-xp-UCY">
                         <barButtonItem key="rightBarButtonItem" title="調べる" id="OAC-zn-JKt">
                             <connections>
                                 <segue destination="Rqe-aw-yMU" kind="push" id="SQo-mi-BPK"/>
@@ -96,20 +96,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="24" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KMT-6y-H0m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="28" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KMT-6y-H0m">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="24" id="0uR-WK-3fg">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="24"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="28" id="0uR-WK-3fg">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uR-WK-3fg" id="jL0-kF-9vu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="23"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="27"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-1F-mCR">
-                                                    <rect key="frame" x="20" y="1" width="280" height="21"/>
+                                                    <rect key="frame" x="20" y="3" width="280" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
@@ -132,7 +132,9 @@
                             <constraint firstItem="KMT-6y-H0m" firstAttribute="leading" secondItem="Msz-Os-PPx" secondAttribute="leading" id="mqd-ul-pTY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="結果" id="ccA-3I-H67"/>
+                    <navigationItem key="navigationItem" title="結果" id="ccA-3I-H67">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="rIw-gQ-egp"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcA-Lh-o6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
