@@ -1,26 +1,112 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4451" systemVersion="13A461" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="g4D-pE-GHg">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3676"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller - タイプを選んでください-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="PTViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nw3-EA-ri8"/>
+                        <viewControllerLayoutGuide type="bottom" id="LJc-8c-5gs"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKD-lE-SLv">
+                                <rect key="frame" x="0.0" y="121" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sNv-3k-GU7">
+                                <rect key="frame" x="0.0" y="320" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2つ目のタイプ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJo-BE-kr0">
+                                <rect key="frame" x="20" y="291" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1つ目のタイプ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srR-Av-Vw0">
+                                <rect key="frame" x="20" y="92" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sNv-3k-GU7" secondAttribute="trailing" id="2Vh-J5-2Hz"/>
+                            <constraint firstItem="sNv-3k-GU7" firstAttribute="leading" secondItem="yKD-lE-SLv" secondAttribute="leading" id="52K-5q-BzU"/>
+                            <constraint firstItem="srR-Av-Vw0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="LLT-ws-dDq"/>
+                            <constraint firstItem="yKD-lE-SLv" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Q0A-Ee-QCS"/>
+                            <constraint firstItem="sNv-3k-GU7" firstAttribute="top" secondItem="nJo-BE-kr0" secondAttribute="bottom" constant="8" symbolic="YES" id="YaT-Of-DnD"/>
+                            <constraint firstItem="yKD-lE-SLv" firstAttribute="trailing" secondItem="sNv-3k-GU7" secondAttribute="trailing" id="aRv-vk-wIo"/>
+                            <constraint firstItem="srR-Av-Vw0" firstAttribute="leading" secondItem="nJo-BE-kr0" secondAttribute="leading" id="mUh-WA-6SM"/>
+                            <constraint firstItem="srR-Av-Vw0" firstAttribute="top" secondItem="Nw3-EA-ri8" secondAttribute="bottom" constant="28" id="pYB-pQ-EPM"/>
+                            <constraint firstItem="nJo-BE-kr0" firstAttribute="top" secondItem="yKD-lE-SLv" secondAttribute="bottom" constant="8" symbolic="YES" id="sR5-b1-8GD"/>
+                            <constraint firstItem="yKD-lE-SLv" firstAttribute="top" secondItem="srR-Av-Vw0" secondAttribute="bottom" constant="8" symbolic="YES" id="ubS-JI-fVW"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="タイプを選んでください" id="YGL-xp-UCY">
+                        <barButtonItem key="rightBarButtonItem" title="調べる" id="OAC-zn-JKt"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Rqe-aw-yMU" kind="push" id="T0E-Ez-Upf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="125" y="66"/>
+        </scene>
+        <!--View Controller - 結果-->
+        <scene sceneID="zjg-Hc-buK">
+            <objects>
+                <viewController id="Rqe-aw-yMU" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0pW-5E-HFU"/>
+                        <viewControllerLayoutGuide type="bottom" id="e6l-4c-TpG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Msz-Os-PPx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEc-4g-AYm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="結果" id="ccA-3I-H67"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcA-Lh-o6I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="43"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aK9-ec-cu7">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="g4D-pE-GHg" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TOA-qL-lX3">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="7Te-9s-YVu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grG-9y-2dG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-420" y="119"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
