@@ -23,10 +23,12 @@
     NSString *firstTypeName  = [PTType stringForTypeId:self.firstTypeId];
     NSString *secondTypeName = [PTType stringForTypeId:self.secondTypeId];
     
-    if( self.secondTypeId > 0 ){
-        self.title = [NSString stringWithFormat:@"%@ / %@", firstTypeName, secondTypeName];
-    }else{
+    if( self.firstTypeId == 0 ){
+        self.title = secondTypeName;
+    }else if( self.secondTypeId == 0 ){
         self.title = firstTypeName;
+    }else{
+        self.title = [NSString stringWithFormat:@"%@ / %@", firstTypeName, secondTypeName];
     }
 }
 
