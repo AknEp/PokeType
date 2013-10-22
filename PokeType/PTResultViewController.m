@@ -18,6 +18,18 @@
 
 @implementation PTResultViewController
 
+- (void)viewDidLoad
+{
+    NSString *firstTypeName  = [PTType stringForTypeId:self.firstTypeId];
+    NSString *secondTypeName = [PTType stringForTypeId:self.secondTypeId];
+    
+    if( self.secondTypeId > 0 ){
+        self.title = [NSString stringWithFormat:@"%@ / %@", firstTypeName, secondTypeName];
+    }else{
+        self.title = firstTypeName;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     self.result = [PTType structuredResultWithFirstTypeId:self.firstTypeId secondTypeId:self.secondTypeId];
@@ -49,19 +61,19 @@
 {
     switch (section) {
         case 0:
-            return @"4倍";
+            return @"4倍 こうかはばつぐんだ！";
             break;
         case 1:
-            return @"2倍";
+            return @"2倍 こうかはばつぐんだ！";
             break;
         case 2:
-            return @"1/2";
+            return @"1/2 こうかはいまひとつのようだ";
             break;
         case 3:
-            return @"1/4";
+            return @"1/4 こうかはいまひとつのようだ";
             break;
         case 4:
-            return @"こうかがない";
+            return @"0 こうかがないようだ";
             break;
     }
     return nil;
