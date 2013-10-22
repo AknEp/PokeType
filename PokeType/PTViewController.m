@@ -8,6 +8,7 @@
 
 #import "PTViewController.h"
 
+#import "PTResultViewController.h"
 #import "PTType.h"
 
 @interface PTViewController ()
@@ -48,9 +49,22 @@
     return [PTType stringForTypeId:row];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if( [self.type1PickerView selectedRowInComponent:0] == [self.type2PickerView selectedRowInComponent:0] ){
+        //TODO UIAlertView 出したい。 後でBlockKitを入れてからにする？
+        // ... ボタンの押下が可不可で表現すべき？
+        
+        return NO;
+    }
+    return YES;
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    PTResultViewController *resultViewController = segue.destinationViewController;
+    resultViewController.firstTypeId = [self.type1PickerView selectedRowInComponent:0];
+    resultViewController.secondTypeId = [self.type2PickerView selectedRowInComponent:0];
 }
 
 

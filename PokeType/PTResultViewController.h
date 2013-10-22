@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PTResultViewController : UIViewController
+@interface PTResultViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+
+@property NSUInteger firstTypeId;
+@property NSUInteger secondTypeId;
 
 @end

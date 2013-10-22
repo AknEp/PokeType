@@ -12,5 +12,7 @@
 
 + (NSUInteger)countOfTypes;
 + (NSString*)stringForTypeId:(NSUInteger)typeId;
++ (NSDictionary*)structuredResultWithFirstTypeId:(NSUInteger)firstTypeId secondTypeId:(NSUInteger)secondTypeId;
++ (NSArray*)resultWithFirstTypeId:(NSUInteger)firstTypeId secondTypeId:(NSUInteger)secondTypeId;
 
 @end

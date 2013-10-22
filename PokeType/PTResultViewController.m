@@ -8,31 +8,101 @@
 
 #import "PTResultViewController.h"
 
+#import "PTType.h"
+
 @interface PTResultViewController ()
+
+@property NSDictionary *result;
 
 @end
 
 @implementation PTResultViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)viewWillAppear:(BOOL)animated
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    self.result = [PTType structuredResultWithFirstTypeId:self.firstTypeId secondTypeId:self.secondTypeId];
+}
+
+- (NSString*)sectionStringWithId:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            return @"quadruples";
+            break;
+        case 1:
+            return @"doubles";
+            break;
+        case 2:
+            return @"halves";
+            break;
+        case 3:
+            return @"quarters";
+            break;
+        case 4:
+            return @"zeros";
+            break;
     }
-    return self;
+    return nil;
 }
 
-- (void)viewDidLoad
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    return 5;
 }
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return [[self.result objectForKey:[self sectionStringWithId:section]] count];
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    switch (section) {
+        case 0:
+            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
+                return @"4倍";
+            }
+            break;
+        case 1:
+            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
+                return @"2倍";
+            }
+            break;
+        case 2:
+            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
+                return @"1/2";
+            }
+            break;
+        case 3:
+            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
+                return @"1/4";
+            }
+            break;
+        case 4:
+            if( [[self.result objectForKey:[self sectionStringWithId:section]] count] > 0 ){
+                return @"こうかがない";
+            }
+            break;
+    }
+    
+    return nil;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    UILabel *label = (UILabel *)[cell viewWithTag:10];
+    NSNumber *typeId = self.result[[self sectionStringWithId:indexPath.section]][indexPath.row];
+    label.text = [PTType stringForTypeId:[typeId integerValue]];
+    
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+
 
 @end

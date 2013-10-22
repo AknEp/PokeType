@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="125" y="66"/>
         </scene>
-        <!--View Controller - 結果-->
+        <!--Result View Controller - 結果-->
         <scene sceneID="zjg-Hc-buK">
             <objects>
-                <viewController id="Rqe-aw-yMU" sceneMemberID="viewController">
+                <viewController id="Rqe-aw-yMU" customClass="PTResultViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0pW-5E-HFU"/>
                         <viewControllerLayoutGuide type="bottom" id="e6l-4c-TpG"/>
@@ -96,12 +96,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kEc-4g-AYm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="24" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KMT-6y-H0m">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="24" id="0uR-WK-3fg">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uR-WK-3fg" id="jL0-kF-9vu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="23"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-1F-mCR">
+                                                    <rect key="frame" x="20" y="1" width="280" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rqe-aw-yMU" id="tbh-TX-wtp"/>
+                                    <outlet property="delegate" destination="Rqe-aw-yMU" id="yQN-7F-fiG"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KMT-6y-H0m" secondAttribute="bottom" id="5QZ-GB-Cla"/>
+                            <constraint firstItem="KMT-6y-H0m" firstAttribute="top" secondItem="Msz-Os-PPx" secondAttribute="top" id="Y6i-5M-e2D"/>
+                            <constraint firstAttribute="trailing" secondItem="KMT-6y-H0m" secondAttribute="trailing" id="cg0-LH-c0U"/>
+                            <constraint firstItem="KMT-6y-H0m" firstAttribute="leading" secondItem="Msz-Os-PPx" secondAttribute="leading" id="mqd-ul-pTY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="結果" id="ccA-3I-H67"/>
                 </viewController>

@@ -48,6 +48,75 @@
     return types[typeId];
 }
 
++ (NSDictionary*)structuredResultWithFirstTypeId:(NSUInteger)firstTypeId secondTypeId:(NSUInteger)secondTypeId
+{
+    NSArray *result = [self resultWithFirstTypeId:firstTypeId secondTypeId:secondTypeId];
+    
+    NSMutableArray *quadruples = [NSMutableArray array];
+    NSMutableArray *doubles    = [NSMutableArray array];
+    NSMutableArray *halves     = [NSMutableArray array];
+    NSMutableArray *quarters   = [NSMutableArray array];
+    NSMutableArray *zeros      = [NSMutableArray array];
+    
+    // 1から初めているのは、0番の「選択しない」を飛ばすためです。
+    for( NSUInteger typeId=1; typeId<[PTType countOfTypes]; typeId++ ){
+        NSNumber *powerNumber = result[typeId];
+        double power = [powerNumber doubleValue];
+        
+        if( power == 4.0 ){
+            [quadruples addObject:@(typeId)];
+        }
+        
+        if( power == 2.0 ){
+            [doubles addObject:@(typeId)];
+        }
+        
+        if( power == 0.5 ){
+            [halves addObject:@(typeId)];
+        }
+        
+        if( power == 0.25 ){
+            [quarters addObject:@(typeId)];
+        }
+        
+        if( power == 0.0 ){
+            [zeros addObject:@(typeId)];
+        }
+        
+    }
+    
+    return
+    @{
+      @"quadruples" : [NSArray arrayWithArray:quadruples],
+      @"doubles"    : [NSArray arrayWithArray:doubles],
+      @"quarters"   : [NSArray arrayWithArray:quarters],
+      @"halves"     : [NSArray arrayWithArray:halves],
+      @"zeros"      : [NSArray arrayWithArray:zeros],
+      };
+    
+}
+
++ (NSArray*)resultWithFirstTypeId:(NSUInteger)firstTypeId secondTypeId:(NSUInteger)secondTypeId
+{
+    NSArray *typeTable = [self typeTable];
+    
+    NSArray *firstTypePower = [typeTable objectAtIndex:firstTypeId];
+    NSArray *secondTypePower = [typeTable objectAtIndex:secondTypeId];
+    
+    
+    NSMutableArray *resultPower = [NSMutableArray arrayWithCapacity:[self countOfTypes]];
+    
+    for( NSInteger count=0; count< [self countOfTypes]; count++ ){
+        resultPower[count] = @([firstTypePower[count] doubleValue] * [secondTypePower[count] doubleValue]);
+    }
+    
+    return [NSArray arrayWithArray:resultPower];
+}
+
+
+#pragma protected like methods
+
+
 + (NSArray*)typeTable
 {
     return @[
