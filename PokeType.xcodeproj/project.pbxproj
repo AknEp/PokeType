@@ -21,6 +21,8 @@
 		75611D771816D87700FEFA7E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75611D591816D87700FEFA7E /* UIKit.framework */; };
 		75611D7F1816D87800FEFA7E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75611D7D1816D87800FEFA7E /* InfoPlist.strings */; };
 		75611D811816D87800FEFA7E /* PokeTypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75611D801816D87800FEFA7E /* PokeTypeTests.m */; };
+		75611D8C1816DF3C00FEFA7E /* PTType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75611D8B1816DF3C00FEFA7E /* PTType.m */; };
+		75611D8D1816DF3C00FEFA7E /* PTType.m in Sources */ = {isa = PBXBuildFile; fileRef = 75611D8B1816DF3C00FEFA7E /* PTType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		75611D7C1816D87800FEFA7E /* PokeTypeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PokeTypeTests-Info.plist"; sourceTree = "<group>"; };
 		75611D7E1816D87800FEFA7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		75611D801816D87800FEFA7E /* PokeTypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PokeTypeTests.m; sourceTree = "<group>"; };
+		75611D8A1816DF3C00FEFA7E /* PTType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTType.h; sourceTree = "<group>"; };
+		75611D8B1816DF3C00FEFA7E /* PTType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				75611D671816D87700FEFA7E /* Main.storyboard */,
 				75611D6A1816D87700FEFA7E /* PTViewController.h */,
 				75611D6B1816D87700FEFA7E /* PTViewController.m */,
+				75611D8A1816DF3C00FEFA7E /* PTType.h */,
+				75611D8B1816DF3C00FEFA7E /* PTType.m */,
 				75611D6D1816D87700FEFA7E /* Images.xcassets */,
 				75611D5C1816D87700FEFA7E /* Supporting Files */,
 			);
@@ -254,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75611D661816D87700FEFA7E /* PTAppDelegate.m in Sources */,
+				75611D8C1816DF3C00FEFA7E /* PTType.m in Sources */,
 				75611D6C1816D87700FEFA7E /* PTViewController.m in Sources */,
 				75611D621816D87700FEFA7E /* main.m in Sources */,
 			);
@@ -264,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75611D811816D87800FEFA7E /* PokeTypeTests.m in Sources */,
+				75611D8D1816DF3C00FEFA7E /* PTType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
