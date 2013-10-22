@@ -44,16 +44,21 @@
     return [PTType stringForTypeId:row];
 }
 
-- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    if( [self.type1PickerView selectedRowInComponent:0] == [self.type2PickerView selectedRowInComponent:0] ){
-        //TODO UIAlertView 出したい。 後でBlockKitを入れてからにする？
-        // ... ボタンの押下が可不可で表現すべき？
-        
-        return NO;
-    }
-    return YES;
+    [self configureCanGoToResult];
 }
+
+#pragma - Configuring Views
+
+- (void) configureCanGoToResult
+{
+    BOOL canGoToResult = ( [self.type1PickerView selectedRowInComponent:0] != [self.type2PickerView selectedRowInComponent:0] );
+    
+    self.navigationItem.rightBarButtonItem.enabled = canGoToResult;
+}
+
+#pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
