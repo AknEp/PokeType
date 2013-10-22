@@ -7,4 +7,4 @@ PokeType
 
 ![最初の画面](https://raw.github.com/AknEp/PokeType/master/images/firstView.png)
 
-![結果の画面](https://github.com/AknEp/PokeType/blob/master/images/resultView.png)
+![結果の画面](https://raw.github.com/AknEp/PokeType/blob/master/images/resultView.png)
