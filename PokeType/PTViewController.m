@@ -62,9 +62,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    PTResultViewController *resultViewController = segue.destinationViewController;
-    resultViewController.firstTypeId = [self.type1PickerView selectedRowInComponent:0];
-    resultViewController.secondTypeId = [self.type2PickerView selectedRowInComponent:0];
+    if( [segue.identifier isEqualToString:@"GoToResult"] ){
+        PTResultViewController *resultViewController = segue.destinationViewController;
+        resultViewController.firstTypeId = [self.type1PickerView selectedRowInComponent:0];
+        resultViewController.secondTypeId = [self.type2PickerView selectedRowInComponent:0];
+    }
 }
 
 

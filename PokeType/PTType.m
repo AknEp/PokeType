@@ -113,6 +113,35 @@
     return [NSArray arrayWithArray:resultPower];
 }
 
++ (NSArray*)search:(NSString*)query
+{
+    NSDictionary *nameTable = [self nameTable];
+    NSArray *names = [nameTable allKeys];
+    
+    NSString *queryString = [NSString stringWithFormat:@"*%@*", query];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF LIKE %@", queryString];
+    
+    NSArray *filteredNames = [names filteredArrayUsingPredicate:predicate];
+    
+    NSMutableArray *filteredArray = [NSMutableArray arrayWithCapacity:filteredNames.count];
+    
+    for( NSString *name in filteredNames ){
+        NSDictionary *obj = nameTable[name];
+        [filteredArray addObject:
+         @{
+           @"name": name ,
+           @"num": obj[@"num"] ,
+           @"types": obj[@"types"]
+           }
+         ];
+    }
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"num" ascending:YES];
+    NSArray *sortedArray = [filteredArray sortedArrayUsingDescriptors:@[sortDescriptor]];
+    
+    return sortedArray;
+}
 
 #pragma protected like methods
 

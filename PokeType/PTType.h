@@ -14,5 +14,6 @@
 + (NSString*)stringForTypeId:(NSUInteger)typeId;
 + (NSDictionary*)structuredResultWithFirstTypeId:(NSUInteger)firstTypeId secondTypeId:(NSUInteger)secondTypeId;
 + (NSArray*)resultWithFirstTypeId:(NSUInteger)firstTypeId secondTypeId:(NSUInteger)secondTypeId;
++ (NSArray*)search:(NSString*)query;
 
 @end
