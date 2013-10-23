@@ -69,11 +69,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ポケモンのタイプ" id="YGL-xp-UCY">
-                        <barButtonItem key="leftBarButtonItem" title="なまえから" id="SNb-b5-EER">
-                            <connections>
-                                <segue destination="8fe-dF-V8y" kind="push" id="uWS-ab-aI5"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="調べる" id="OAC-zn-JKt">
                             <connections>
                                 <segue destination="Rqe-aw-yMU" kind="push" identifier="GoToResult" id="SQo-mi-BPK"/>
@@ -87,7 +82,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="66"/>
+            <point key="canvasLocation" x="565" y="-658"/>
         </scene>
         <!--Result View Controller - 結果-->
         <scene sceneID="zjg-Hc-buK">
@@ -107,7 +102,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="28" id="0uR-WK-3fg">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="28"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uR-WK-3fg" id="jL0-kF-9vu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="27"/>
@@ -153,7 +148,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="7Te-9s-YVu"/>
+                        <segue destination="8fe-dF-V8y" kind="relationship" relationship="rootViewController" id="KMV-nT-FQd"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grG-9y-2dG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -163,7 +158,6 @@
         <!--Serach View Controller - ポケモンのなまえ-->
         <scene sceneID="TqV-k2-eUM">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ojD-of-f3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="8fe-dF-V8y" customClass="PTSerachViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Int-NY-wgh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
@@ -185,7 +179,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="シェイミ(ランドフォルム)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKI-Xa-HVe">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="シェイミ(スカイフォルム)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZKI-Xa-HVe">
                                             <rect key="frame" x="20" y="11" width="196" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -200,7 +194,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Rqe-aw-yMU" kind="push" id="etA-7F-L2J"/>
+                                    <segue destination="Rqe-aw-yMU" kind="push" identifier="GoToResult" id="etA-7F-L2J"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -209,11 +203,18 @@
                             <outlet property="delegate" destination="8fe-dF-V8y" id="FV9-US-Z5u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ポケモンのなまえ" id="MGb-Jk-YPv"/>
+                    <navigationItem key="navigationItem" title="ポケモンのなまえ" id="MGb-Jk-YPv">
+                        <barButtonItem key="rightBarButtonItem" title="じぶんで" id="Szo-Gx-MlR">
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="push" id="myC-dM-qsN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="Mcg-pY-bPA" id="745-Xk-OgY"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ojD-of-f3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="Mcg-pY-bPA">
                     <connections>
                         <outlet property="delegate" destination="8fe-dF-V8y" id="NCR-T0-j7p"/>
@@ -224,7 +225,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="508" y="619"/>
+            <point key="canvasLocation" x="153" y="119"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -233,6 +234,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="etA-7F-L2J"/>
+        <segue reference="SQo-mi-BPK"/>
     </inferredMetricsTieBreakers>
 </document>

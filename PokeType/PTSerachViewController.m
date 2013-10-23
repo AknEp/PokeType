@@ -69,19 +69,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSIndexPath *indexPath = nil;
-    if( self.tableView.indexPathForSelectedRow ){
-        indexPath = self.tableView.indexPathForSelectedRow;
+    if( [segue.identifier isEqualToString:@"GoToResult"] ){
+        NSIndexPath *indexPath = nil;
+        if( self.tableView.indexPathForSelectedRow ){
+            indexPath = self.tableView.indexPathForSelectedRow;
+        }
+        if( self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow ){
+            indexPath = self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow;
+        }
+        
+        NSArray *types = self.result[indexPath.row][@"types"];
+        
+        PTResultViewController *resultViewController = segue.destinationViewController;
+        resultViewController.firstTypeId = [types[0] integerValue];
+        resultViewController.secondTypeId = [types[1] integerValue];
     }
-    if( self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow ){
-        indexPath = self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow;
-    }
-    
-    NSArray *types = self.result[indexPath.row][@"types"];
-    
-    PTResultViewController *resultViewController = segue.destinationViewController;
-    resultViewController.firstTypeId = [types[0] integerValue];
-    resultViewController.secondTypeId = [types[1] integerValue];
     
 }
 
