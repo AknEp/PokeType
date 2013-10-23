@@ -8,6 +8,8 @@
 
 #import "PTSerachViewController.h"
 
+#import "PTResultViewController.h"
+
 #import "PTType.h"
 
 @interface PTSerachViewController ()
@@ -26,11 +28,9 @@
 #pragma mark - TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if( self.searchDisplayController.searchBar.text.length > 0 ){
-        NSString *query = self.searchDisplayController.searchBar.text;
-        self.result = [PTType search:query];
-        return [self.result count];
-    }
+    NSString *query = self.searchDisplayController.searchBar.text;
+    self.result = [PTType search:query];
+    return [self.result count];
     
     return 0;
 }
@@ -65,6 +65,24 @@
     }
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexPath = nil;
+    if( self.tableView.indexPathForSelectedRow ){
+        indexPath = self.tableView.indexPathForSelectedRow;
+    }
+    if( self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow ){
+        indexPath = self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow;
+    }
+    
+    NSArray *types = self.result[indexPath.row][@"types"];
+    
+    PTResultViewController *resultViewController = segue.destinationViewController;
+    resultViewController.firstTypeId = [types[0] integerValue];
+    resultViewController.secondTypeId = [types[1] integerValue];
+    
 }
 
 @end

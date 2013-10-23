@@ -69,7 +69,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ポケモンのタイプ" id="YGL-xp-UCY">
-                        <barButtonItem key="leftBarButtonItem" title="名前から探す" id="SNb-b5-EER">
+                        <barButtonItem key="leftBarButtonItem" title="なまえから" id="SNb-b5-EER">
                             <connections>
                                 <segue destination="8fe-dF-V8y" kind="push" id="uWS-ab-aI5"/>
                             </connections>
@@ -107,7 +107,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="28" id="0uR-WK-3fg">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="28"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="28"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0uR-WK-3fg" id="jL0-kF-9vu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="27"/>
@@ -160,7 +160,7 @@
             </objects>
             <point key="canvasLocation" x="-420" y="119"/>
         </scene>
-        <!--Serach View Controller - ポケモンのなまえから調べる-->
+        <!--Serach View Controller - ポケモンのなまえ-->
         <scene sceneID="TqV-k2-eUM">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ojD-of-f3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -169,7 +169,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="b0a-IA-JU4">
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="ポケモンのなまえを入れてね" id="b0a-IA-JU4">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -178,7 +178,7 @@
                             </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="rkU-1x-HKp">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="rkU-1x-HKp">
                                 <rect key="frame" x="0.0" y="130" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rkU-1x-HKp" id="48z-j8-98Y">
@@ -199,6 +199,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Rqe-aw-yMU" kind="push" id="etA-7F-L2J"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -206,7 +209,7 @@
                             <outlet property="delegate" destination="8fe-dF-V8y" id="FV9-US-Z5u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ポケモンのなまえから調べる" id="MGb-Jk-YPv"/>
+                    <navigationItem key="navigationItem" title="ポケモンのなまえ" id="MGb-Jk-YPv"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="Mcg-pY-bPA" id="745-Xk-OgY"/>
                     </connections>
@@ -229,4 +232,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="etA-7F-L2J"/>
+    </inferredMetricsTieBreakers>
 </document>
