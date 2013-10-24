@@ -8,11 +8,16 @@
 
 #import "PTAppDelegate.h"
 
+#import <FlurrySDK/Flurry.h>
+
 @implementation PTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    [Flurry startSession:PTFlurryApplicationKey];
+    
+    
     return YES;
 }
 							

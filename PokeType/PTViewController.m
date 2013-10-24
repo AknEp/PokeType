@@ -10,6 +10,7 @@
 
 #import "PTResultViewController.h"
 #import "PTType.h"
+#import "PTFlurry.h"
 
 @interface PTViewController ()
 
@@ -64,8 +65,14 @@
 {
     if( [segue.identifier isEqualToString:@"GoToResult"] ){
         PTResultViewController *resultViewController = segue.destinationViewController;
-        resultViewController.firstTypeId = [self.type1PickerView selectedRowInComponent:0];
-        resultViewController.secondTypeId = [self.type2PickerView selectedRowInComponent:0];
+        
+        NSUInteger firstTypeId = [self.type1PickerView selectedRowInComponent:0];
+        NSUInteger secondTypeId = [self.type2PickerView selectedRowInComponent:0];
+        
+        resultViewController.firstTypeId = firstTypeId;
+        resultViewController.secondTypeId = secondTypeId;
+        
+        [PTFlurry logSearchType:firstTypeId type2:secondTypeId];
     }
 }
 

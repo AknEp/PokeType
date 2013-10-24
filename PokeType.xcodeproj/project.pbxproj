@@ -10,6 +10,10 @@
 		648F14ABBC164115814D44DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F97001850B2E4791897BA880 /* libPods.a */; };
 		7524CBC11816E78700FE5F29 /* PTResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7524CBC01816E78700FE5F29 /* PTResultViewController.m */; };
 		7524CBC21816E78700FE5F29 /* PTResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7524CBC01816E78700FE5F29 /* PTResultViewController.m */; };
+		7527BDC118192EAF0032EB3E /* PTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7527BDC018192EAF0032EB3E /* PTNavigationController.m */; };
+		7527BDC218192EAF0032EB3E /* PTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7527BDC018192EAF0032EB3E /* PTNavigationController.m */; };
+		7527BDC518192EDD0032EB3E /* PTFlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7527BDC418192EDD0032EB3E /* PTFlurry.m */; };
+		7527BDC618192EDD0032EB3E /* PTFlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7527BDC418192EDD0032EB3E /* PTFlurry.m */; };
 		753E2A66181840CA00AA24B0 /* PTSerachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 753E2A65181840CA00AA24B0 /* PTSerachViewController.m */; };
 		753E2A67181840CA00AA24B0 /* PTSerachViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 753E2A65181840CA00AA24B0 /* PTSerachViewController.m */; };
 		75611D561816D87700FEFA7E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75611D551816D87700FEFA7E /* Foundation.framework */; };
@@ -44,6 +48,10 @@
 		7524CBBF1816E78700FE5F29 /* PTResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTResultViewController.h; sourceTree = "<group>"; };
 		7524CBC01816E78700FE5F29 /* PTResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTResultViewController.m; sourceTree = "<group>"; };
 		7527BDBE18192D5F0032EB3E /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7527BDBF18192EAF0032EB3E /* PTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTNavigationController.h; sourceTree = "<group>"; };
+		7527BDC018192EAF0032EB3E /* PTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTNavigationController.m; sourceTree = "<group>"; };
+		7527BDC318192EDD0032EB3E /* PTFlurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTFlurry.h; sourceTree = "<group>"; };
+		7527BDC418192EDD0032EB3E /* PTFlurry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTFlurry.m; sourceTree = "<group>"; };
 		753E2A64181840CA00AA24B0 /* PTSerachViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTSerachViewController.h; sourceTree = "<group>"; };
 		753E2A65181840CA00AA24B0 /* PTSerachViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTSerachViewController.m; sourceTree = "<group>"; };
 		75611D521816D87700FEFA7E /* PokeType.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeType.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +141,8 @@
 			children = (
 				75611D641816D87700FEFA7E /* PTAppDelegate.h */,
 				75611D651816D87700FEFA7E /* PTAppDelegate.m */,
+				7527BDBF18192EAF0032EB3E /* PTNavigationController.h */,
+				7527BDC018192EAF0032EB3E /* PTNavigationController.m */,
 				75611D671816D87700FEFA7E /* Main.storyboard */,
 				75611D6A1816D87700FEFA7E /* PTViewController.h */,
 				75611D6B1816D87700FEFA7E /* PTViewController.m */,
@@ -142,6 +152,8 @@
 				753E2A65181840CA00AA24B0 /* PTSerachViewController.m */,
 				75611D8A1816DF3C00FEFA7E /* PTType.h */,
 				75611D8B1816DF3C00FEFA7E /* PTType.m */,
+				7527BDC318192EDD0032EB3E /* PTFlurry.h */,
+				7527BDC418192EDD0032EB3E /* PTFlurry.m */,
 				75611D6D1816D87700FEFA7E /* Images.xcassets */,
 				75611D5C1816D87700FEFA7E /* Supporting Files */,
 			);
@@ -316,8 +328,10 @@
 			files = (
 				75611D661816D87700FEFA7E /* PTAppDelegate.m in Sources */,
 				75611D8C1816DF3C00FEFA7E /* PTType.m in Sources */,
+				7527BDC118192EAF0032EB3E /* PTNavigationController.m in Sources */,
 				753E2A66181840CA00AA24B0 /* PTSerachViewController.m in Sources */,
 				7524CBC11816E78700FE5F29 /* PTResultViewController.m in Sources */,
+				7527BDC518192EDD0032EB3E /* PTFlurry.m in Sources */,
 				75611D6C1816D87700FEFA7E /* PTViewController.m in Sources */,
 				75611D621816D87700FEFA7E /* main.m in Sources */,
 			);
@@ -328,7 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				753E2A67181840CA00AA24B0 /* PTSerachViewController.m in Sources */,
+				7527BDC218192EAF0032EB3E /* PTNavigationController.m in Sources */,
 				75611D811816D87800FEFA7E /* PokeTypeTests.m in Sources */,
+				7527BDC618192EDD0032EB3E /* PTFlurry.m in Sources */,
 				75611D8D1816DF3C00FEFA7E /* PTType.m in Sources */,
 				7524CBC21816E78700FE5F29 /* PTResultViewController.m in Sources */,
 			);

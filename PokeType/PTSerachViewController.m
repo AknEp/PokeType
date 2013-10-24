@@ -11,6 +11,7 @@
 #import "PTResultViewController.h"
 
 #import "PTType.h"
+#import "PTFlurry.h"
 
 @interface PTSerachViewController ()
 
@@ -67,6 +68,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if( [segue.identifier isEqualToString:@"GoToResult"] ){
+        
         NSIndexPath *indexPath = nil;
         if( self.tableView.indexPathForSelectedRow ){
             indexPath = self.tableView.indexPathForSelectedRow;
@@ -75,11 +77,14 @@
             indexPath = self.searchDisplayController.searchResultsTableView.indexPathForSelectedRow;
         }
         
-        NSArray *types = self.result[indexPath.row][@"types"];
+        NSDictionary *pokemon = self.result[indexPath.row];
+        NSArray *types = pokemon[@"types"];
         
         PTResultViewController *resultViewController = segue.destinationViewController;
         resultViewController.firstTypeId = [types[0] integerValue];
         resultViewController.secondTypeId = [types[1] integerValue];
+        
+        [PTFlurry logGoToPokemon:pokemon];
     }
     
 }
@@ -89,6 +94,7 @@
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
     [self search:searchString];
+    [PTFlurry logSearchPokemon:searchString];
     
     return YES;
 }
