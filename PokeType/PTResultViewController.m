@@ -8,6 +8,8 @@
 
 #import "PTResultViewController.h"
 
+#import <Appirater/Appirater.h>
+
 #import "PTType.h"
 
 @interface PTResultViewController ()
@@ -20,6 +22,8 @@
 
 - (void)viewDidLoad
 {
+    [Appirater userDidSignificantEvent:YES];
+    
     NSString *firstTypeName  = [PTType stringForTypeId:self.firstTypeId];
     NSString *secondTypeName = [PTType stringForTypeId:self.secondTypeId];
     

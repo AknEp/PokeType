@@ -1,0 +1,36 @@
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "0k7-1F-mCR"; */
+"0k7-1F-mCR.text" = "Label";
+
+/* Class = "IBUINavigationItem"; title = "ポケモンのなまえ"; ObjectID = "MGb-Jk-YPv"; */
+"MGb-Jk-YPv.title" = "ポケモンのなまえ";
+
+/* Class = "IBUIBarButtonItem"; title = "調べる"; ObjectID = "OAC-zn-JKt"; */
+"OAC-zn-JKt.title" = "調べる";
+
+/* Class = "IBUIBarButtonItem"; title = "じぶんで"; ObjectID = "Szo-Gx-MlR"; */
+"Szo-Gx-MlR.title" = "じぶんで";
+
+/* Class = "IBUINavigationItem"; title = "ポケモンのタイプ"; ObjectID = "YGL-xp-UCY"; */
+"YGL-xp-UCY.title" = "ポケモンのタイプ";
+
+/* Class = "IBUILabel"; text = "シェイミ(スカイフォルム)"; ObjectID = "ZKI-Xa-HVe"; */
+"ZKI-Xa-HVe.text" = "シェイミ(スカイフォルム)";
+
+/* Class = "IBUISearchBar"; placeholder = "ポケモンのなまえを入れてね"; ObjectID = "b0a-IA-JU4"; */
+"b0a-IA-JU4.placeholder" = "ポケモンのなまえを入れてね";
+
+/* Class = "IBUINavigationItem"; title = "結果"; ObjectID = "ccA-3I-H67"; */
+"ccA-3I-H67.title" = "結果";
+
+/* Class = "IBUILabel"; text = "2つ目のタイプ"; ObjectID = "nJo-BE-kr0"; */
+"nJo-BE-kr0.text" = "2つ目のタイプ";
+
+/* Class = "IBUIBarButtonItem"; title = "戻る"; ObjectID = "rIw-gQ-egp"; */
+"rIw-gQ-egp.title" = "戻る";
+
+/* Class = "IBUILabel"; text = "1つ目のタイプ"; ObjectID = "srR-Av-Vw0"; */
+"srR-Av-Vw0.text" = "1つ目のタイプ";
+
+/* Class = "IBUILabel"; text = "くさ/ひこう"; ObjectID = "uU9-sw-Wbp"; */
+"uU9-sw-Wbp.text" = "くさ/ひこう";

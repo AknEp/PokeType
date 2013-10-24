@@ -9,6 +9,7 @@
 #import "PTAppDelegate.h"
 
 #import <FlurrySDK/Flurry.h>
+#import <Appirater/Appirater.h>
 
 @implementation PTAppDelegate
 
@@ -17,6 +18,11 @@
     
     [Flurry startSession:PTFlurryApplicationKey];
     
+    [Appirater setAppId:PTAppId];
+    [Appirater setSignificantEventsUntilPrompt:10];
+    [Appirater setTimeBeforeReminding:3];
+    [Appirater setAlwaysUseMainBundle:YES];
+    [Appirater appLaunched:YES];
     
     return YES;
 }
@@ -35,7 +41,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    [Appirater appEnteredForeground:YES];
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
