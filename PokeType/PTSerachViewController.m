@@ -22,14 +22,13 @@
 
 - (void)viewDidLoad
 {
+    [self search:@""];
     [super viewDidLoad];
 }
 
 #pragma mark - TableView
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSString *query = self.searchDisplayController.searchBar.text;
-    self.result = [PTType search:query];
     return [self.result count];
     
     return 0;
@@ -85,6 +84,28 @@
         resultViewController.secondTypeId = [types[1] integerValue];
     }
     
+}
+
+#pragma UISearchDisplayControllerDelegate
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self search:searchString];
+    
+    return YES;
+}
+
+- (void)searchDisplayController:(UISearchDisplayController *)controller willHideSearchResultsTableView:(UITableView *)tableView
+{
+    [self search:@""];
+    [self.tableView reloadData];
+}
+
+#pragma mark - Search Helper
+
+- (void)search:(NSString*)query
+{
+    self.result = [PTType search:query];
 }
 
 @end
