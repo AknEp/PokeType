@@ -1,0 +1,3 @@
+pod "Appirater"
+pod 'FlurrySDK'
+
