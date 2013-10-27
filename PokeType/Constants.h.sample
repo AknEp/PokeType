@@ -1,0 +1,12 @@
+//
+//  Constants.h
+//  PokeType
+//
+
+#ifndef PokeType_Constants_h
+#define PokeType_Constants_h
+
+#define PTFlurryApplicationKey @"XXXXXXXXXXXXXXXXXXXX"
+#define PTAppId @"000000000"
+
+#endif
