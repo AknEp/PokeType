@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad
 {
+    self.searchDisplayController.searchBar.delegate = self;
     [self search:@""];
     [super viewDidLoad];
 }
@@ -93,8 +94,17 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    [self search:searchString];
     [PTFlurry logSearchPokemon:searchString];
+    
+    NSMutableString *mutableConvertedString = [searchString mutableCopy];
+    CFStringTransform((CFMutableStringRef)mutableConvertedString, NULL, kCFStringTransformHiraganaKatakana, false);
+    NSString *convertedString = [NSString stringWithString:mutableConvertedString];
+    if( ! [convertedString isEqualToString:searchString] ){
+        self.searchDisplayController.searchBar.text = convertedString;
+        return NO;
+    }
+    
+    [self search:convertedString];
     
     return YES;
 }
@@ -103,6 +113,24 @@
 {
     [self search:@""];
     [self.tableView reloadData];
+}
+
+#pragma UISearchBarDelegate
+
+- (BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+
+    
+//    NSString *baseString = searchBar.text;
+//    NSCharacterSet *alphabetSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+//    NSRange alphabetRange = [baseString rangeOfCharacterFromSet:alphabetSet];
+//    
+//    if( alphabetRange.location == NSNotFound){
+//        return YES;
+//    }
+//    
+//    searchBar.text = [baseString stringByReplacingCharactersInRange:range withString:text];
+    return YES;
 }
 
 #pragma mark - Search Helper

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PTSerachViewController : UITableViewController<UISearchDisplayDelegate>
+@interface PTSerachViewController : UITableViewController<UISearchDisplayDelegate, UISearchBarDelegate>
 
 @end
